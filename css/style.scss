@@ -1,0 +1,227 @@
+// Variables
+// page1
+$page1-gray: #7c7c7c;
+$page1-red: #a81000;
+
+// page2
+$page2-red: #f12934;
+$page2-blue: #343d93;
+$page2-green: #009554;
+$page2-yellow: #f8ea57;
+
+// page3
+$page3-blue: #011da9;
+$page3-red: #fe2015;
+$page3-green: #069330;
+$page3-yellow: #ffc001;
+
+// page4 1
+$page4-black: #010101;
+$page4-gray: #92929a;
+$page4-purple: #6549c2;
+
+// page4 2
+$page4-grey: #c2c2c0;
+$page4-dark-purple: #505388;
+$page4-light-purple: #b3b6d9;
+
+$primary: #e81c4f;
+$white: #ffffff;
+$black: #000000;
+$silver: #dddddd;
+$silver-light: #f5f7f9;
+$text-color: #566b78;
+$pre-border: #6699cc;
+
+// Mixins
+@mixin linear-gradient($angle, $gradient1, $gradient2) {
+  background-color: $gradient2; /* Fallback Color */
+  background-image: -webkit-gradient(
+    linear,
+    $angle,
+    from($gradient1),
+    to($gradient2)
+  ); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(
+    $angle,
+    $gradient1,
+    $gradient2
+  ); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(
+    $angle,
+    $gradient1,
+    $gradient2
+  ); /* FF3.6 */
+  background-image: -ms-linear-gradient(
+    $angle,
+    $gradient1,
+    $gradient2
+  ); /* IE10 */
+  background-image: -o-linear-gradient(
+    $angle,
+    $gradient1,
+    $gradient2
+  ); /* Opera 11.10+ */
+  background-image: linear-gradient($angle, $gradient1, $gradient2);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#{$gradient1}', EndColorStr='#{$gradient2}');
+}
+
+// Keyframes
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+nav {
+  ul {
+    margin: 1rem 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+  }
+  a {
+    margin: 0 1rem;
+    color: $text-color;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+// BLACK MAGIC
+.app > * {
+  display: none;
+}
+
+.app > *:last-child {
+  display: block;
+}
+
+.app > *:target {
+  display: block;
+  animation: fade 300ms linear 1;
+}
+
+.app > *:target ~ * {
+  display: none;
+}
+
+body {
+  background-color: $silver;
+  color: $text-color;
+  font-family: "Inconsolata", monospace;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+a {
+  color: $black;
+}
+
+header {
+  background-color: gray;
+  line-height: 1.2;
+  padding: 8vw 2em;
+  text-align: center;
+
+  h1 {
+    color: $white;
+    font-size: 2.5em;
+    text-transform: uppercase;
+  }
+
+  a {
+    border: 2px solid $white;
+    color: $white;
+    border-radius: 4px;
+    font-size: 0.8em;
+    letter-spacing: 0.2em;
+    padding: 1em 2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: none 200ms;
+    transition-property: color, background, border;
+
+    &:hover {
+      background: crimson;
+      border-color: crimson;
+    }
+  }
+}
+
+.page1-header {
+  background-color: $page1-gray;
+  @include linear-gradient(90deg, $page1-gray, $black);
+
+  a {
+    &:hover {
+      background: $page1-red;
+      border-color: $page1-red;
+    }
+  }
+}
+
+.page2-header {
+  background-color: $page2-red;
+  @include linear-gradient(90deg, $page2-red, $page2-yellow);
+
+  a {
+    &:hover {
+      background: $page2-green;
+      border-color: $page2-green;
+    }
+  }
+}
+
+.page3-header {
+  background-color: $page3-green;
+  @include linear-gradient(90deg, $page3-green, $page3-yellow);
+
+  a {
+    border: 2px solid $white;
+    color: $white;
+
+    &:hover {
+      background: $page3-yellow;
+      border-color: $page3-yellow;
+    }
+  }
+}
+
+.page4-header {
+  background-color: $page4-purple;
+  @include linear-gradient(90deg, $page4-purple, $page4-gray);
+
+  a {
+    border: 2px solid $white;
+    color: $white;
+
+    &:hover {
+      background: $black;
+      border-color: $black;
+    }
+  }
+}
+
+// Container
+.container {
+  margin: 0 auto;
+  max-width: 50em;
+  padding: 4em 2em;
+}
