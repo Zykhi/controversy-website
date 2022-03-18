@@ -119,7 +119,7 @@ header a:hover {
 }
 
 .page1-header {
-  background-color: #7c7c7c;
+  background-color: #ffee00;
   background-color: #000000;
   /* Fallback Color */
   /* Saf4+, Chrome */
@@ -127,9 +127,9 @@ header a:hover {
   /* FF3.6 */
   /* IE10 */
   /* Opera 11.10+ */
-  background-image: -webkit-gradient(linear, left top, right top, from(#7c7c7c), to(#000000));
-  background-image: linear-gradient(90deg, #7c7c7c, #000000);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#7c7c7c', EndColorStr='#000000');
+  background-image: -webkit-gradient(linear, left top, right top, from(#ffee00), to(#000000));
+  background-image: linear-gradient(90deg, #ffee00, #000000);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=$angle,StartColorStr='#ffee00', EndColorStr='#000000');
 }
 
 .page1-header a:hover {

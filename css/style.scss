@@ -1,6 +1,6 @@
 // Variables
 // page1
-$page1-gray: #7c7c7c;
+$page1-yellow: #ffee00;
 $page1-red: #a81000;
 
 // page2
@@ -166,8 +166,8 @@ header {
 }
 
 .page1-header {
-  background-color: $page1-gray;
-  @include linear-gradient(90deg, $page1-gray, $black);
+  background-color: $page1-yellow;
+  @include linear-gradient(90deg, $page1-yellow, $black);
 
   a {
     &:hover {
